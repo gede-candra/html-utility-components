@@ -1,0 +1,238 @@
+ <style>
+        .card-carousel{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        img.img-fluid {
+            height: 100px;
+        }
+
+        @media (min-width: 768px) {
+            img.img-fluid {
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            img.img-fluid {
+                height: 300px;
+            }
+        }
+
+        .myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal-img {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1000;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            max-height: 400px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <swiper-container style="--swiper-navigation-color: #BA4097; --swiper-pagination-color: #BA4097;" pagination="true" pagination-clickable="true" navigation="true" space-between="30" slides-per-view="3" autoplay-delay="5000" autoplay-disable-on-interaction="false">
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/22f5a828-52e5-4591-8430-618f3e40e996.png"
+                    class="myImg figure-img img-fluid rounded" alt="Geprek Sambal Suka">
+                <span class="figure-caption text-center">Geprek Sambal Suka</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/9947ac32-e6ab-4a6d-a8f1-537f555ed6e2.png"
+                    class="myImg figure-img img-fluid rounded" alt="Geprek Sambal Matah">
+                <span class="figure-caption text-center">Geprek Sambal Matah</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/4bd779b5-0f6b-43fb-8b11-2df57d13486f.png"
+                    class="myImg figure-img img-fluid rounded" alt="Geprek Sambal Tomat">
+                <span class="figure-caption text-center">Geprek Sambal Tomat</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/7e5089e0-8856-4266-81e5-5f5f423a2834.png"
+                    class="myImg figure-img img-fluid rounded" alt="Nugget">
+                <span class="figure-caption text-center">Nugget</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/a62dc19f-a002-431e-8f40-94bb85045c06.png"
+                    class="myImg figure-img img-fluid rounded" alt="Mie Tonjok">
+                <span class="figure-caption text-center">Mie Tonjok</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/52f6f476-1e69-4993-95b4-8cf5afa015bf.png"
+                    class="myImg figure-img img-fluid rounded" alt="Sosis Bakar">
+                <span class="figure-caption text-center">Sosis Bakar</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/56148363-cd68-46ae-8f44-680f060dc515.png"
+                    class="myImg figure-img img-fluid rounded" alt="Kentang Goreng">
+                <span class="figure-caption text-center">Kentang Goreng</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/2aafc1c2-89e7-4a2c-b8ab-2ee782b75622.png"
+                    class="myImg figure-img img-fluid rounded" alt="Kentang Balado">
+                <span class="figure-caption text-center">Kentang Balado</span>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div style="text-align: center; margin-bottom: 50px;" class="card-carousel">
+                <img onclick="imgModal(this)"
+                    src="https://cdn.squareble.com/squareble/media/8ddc92a6-b72c-4725-ae14-cff2e5d87ef4/50c171d8-9773-4b0f-9e17-c360997f4cfe.png"
+                    class="myImg figure-img img-fluid rounded" alt="Fried Chicken">
+                <span class="figure-caption text-center">Fried Chicken</span>
+            </div>
+        </swiper-slide>
+    </swiper-container>
+
+    <div id="myModal" class="modal-img">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function imgModal(element) {
+            modal.style.display = "block";
+            modalImg.src = element.src;
+            captionText.innerHTML = element.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
